@@ -16,20 +16,43 @@ def footer() -> rx.Component:
                 alt="Logotipo SASDev. Un teclado con mi acrónimo."
             ),
             rx.link(
-                f"© 2023-{datetime.date.today().year} SASDev by Sergio Almansa",
-                href="https://www.sergioalmansa.dev",
+                rx.box(
+                    f"© 2023-{datetime.date.today().year}",        
+                    rx.text(
+                        " SASDev by Sergio Almansa",
+                        as_="span",
+                        color=Color.PRIMARY.value            
+                    ),
+                    " v2.",
+                    padding_top=Size.DEFAULT.value
+                ),    
+                               
+                href=const.MIWEB_URL,
                 is_external= True,
-                font_size=Size.MEDIUM.value
-            ),
-            rx.text(
-                "BUILDING SOFTWARE WITH ♥ FROM MURCIA.",
                 font_size=Size.MEDIUM.value,
-                margin_top=Size.ZERO.value
+                color=TextColor.BODY.value
             ),
+            rx.hstack(
+                    rx.link(
+                        rx.image(
+                             src="icons/github.svg",
+                             height=Size.LARGE.value,
+                             width=Size.LARGE.value   
+                        ),
+                        href=const.REPO_URL,
+                        is_external=True         
+                    ),
+                    rx.text(
+                        "BUILDING SOFTWARE WITH ♥ FROM MURCIA.",
+                        font_size=Size.MEDIUM.value,
+                        margin_top=Size.ZERO.value
+                    ),
+            ),
+
             align="center",
             margin_bottom=Size.BIG.value,
             pading_bottom=Size.BIG.value,
             padding_x=Size.BIG.value,
-            spacing="0",
+            spacing="2",
             color=TextColor.FOOTER.value
         )

@@ -21,3 +21,7 @@ EMAIL = "sergio.almansa.saura@gmail.com"
 # REFLEX URL
 
 REFLEX_URL = "https://reflex.dev/"
+
+# RECURSOS
+
+REPO_URL = "https://github.com/Sergio-Almansa/web_reflex_sasdev"
