@@ -1,7 +1,8 @@
 import reflex as rx
+from web_reflex_sasdev.routes import Route
 from web_reflex_sasdev.components.link_button import link_button
 from web_reflex_sasdev.components.title import title
-from web_reflex_sasdev.styles.styles import Size as Size
+from web_reflex_sasdev.styles.styles import Size, Color
 import web_reflex_sasdev.constants as const
 
 def links() -> rx.Component:
@@ -10,7 +11,8 @@ def links() -> rx.Component:
         link_button("PORTFOLIO",
                      "Proyectos desarrollados por mí",
                      "/icons/setup.svg",
-                     "https://github.com/Sergio-Almansa"
+                     Route.PORTFOLIO.value,
+                     False
                      ),
         link_button("GitHub",
                     "Repos de mis proyectos",
@@ -27,7 +29,8 @@ def links() -> rx.Component:
         link_button("A qué me he dedicado estos años",
                     "Te cuento con detalle",
                     "/icons/book.svg",
-                    "https://www.linkedin.com/in/sergio-almansa-saura-600358202"
+                    Route.CAREER_PATH.value,
+                    is_external=False
                     ),
         title("Contacto"),
         link_button("Email",

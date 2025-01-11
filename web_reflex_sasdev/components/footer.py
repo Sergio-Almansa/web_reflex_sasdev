@@ -35,7 +35,7 @@ def footer() -> rx.Component:
             rx.hstack(
                     rx.link(
                         rx.image(
-                             src="icons/github.svg",
+                             src="/icons/github.svg",
                              height=Size.LARGE.value,
                              width=Size.LARGE.value   
                         ),

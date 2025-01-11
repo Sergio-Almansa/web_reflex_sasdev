@@ -32,7 +32,8 @@ def header(details=True) -> rx.Component:
                 rx.text(
                     "@sasdev",
                     margin_top=Size.ZERO.value,
-                    color=Color.PRIMARY.value
+                    color=Color.PRIMARY.value,
+                    style=styles.sasdev_style
                 ),
                 rx.hstack(
                     link_icon(

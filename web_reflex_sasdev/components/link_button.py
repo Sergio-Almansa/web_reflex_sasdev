@@ -4,7 +4,11 @@ from web_reflex_sasdev.styles.styles import Size as Size
 from web_reflex_sasdev.styles.colors import Color as Color
 from web_reflex_sasdev.styles.colors import TextColor as TextColor
 
-def link_button(text: str, body: str, image: str, url: str, is_external= True) -> rx.Component:
+def link_button(text: str,
+                body: str,
+                image: str,
+                url: str,
+                is_external= True) -> rx.Component:
     return rx.link(
         rx.button(
             rx.hstack(

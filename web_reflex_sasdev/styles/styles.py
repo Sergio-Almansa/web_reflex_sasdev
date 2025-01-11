@@ -36,12 +36,12 @@ BASE_STYLE = {
     rx.button: {
         "width": "100%",
         "height": "100%",
-        #"display": "block",
         "padding": Size.SMALL.value,
         "border_radius": Size.DEFAULT.value,
         "color": TextColor.HEADER.value,
         "white_space": "normal",
         "text_align": "start",
+        "--cursor-button": "pointer",
         "background_color": Color.CONTENT.value,
         "_hover": {
             "background_color": Color.SECONDARY.value
@@ -49,6 +49,7 @@ BASE_STYLE = {
 
     },
     rx.link: {
+        "color": TextColor.BODY.value,
         "text_decoration": "none",
         "_hover": {}
     }
@@ -59,6 +60,11 @@ navbar_title_style = dict(
     font_size=Size.LARGE.value  
 )
 
+sasdev_style = dict(
+    font_family=Font.LOGO.value,
+    font_weight=FontWeight.LIGHT.value,
+    font_size=Size.MEDIUM.value  
+)
 
 title_style = dict(
     width="100%",
@@ -77,4 +83,12 @@ button_body_style = dict(
     font_size = Size.MEDIUM.value,
     font_weight= FontWeight.LIGHT.value,
     color=TextColor.BODY.value
+)
+
+image_miniatura_style = dict(
+    border_radius="15px",
+    border_width="thick",
+    border_color= Color.PRIMARY.value,
+    transition="transform 0.3s ease",  # Suaviza la transición
+    _hover={"transform": "scale(3)"}, # Amplía la imagen al 200% al pasar el cursor
 )
