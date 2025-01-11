@@ -8,4 +8,8 @@ reflex export --frontend-only
 unzip frontend.zip -d public
 rm -f frontend.zip
 deactivate
+git status
+git add .
+git commit -m"mensaje de commit"
+git push -u origin main
 echo "Comandos ejecutados"
