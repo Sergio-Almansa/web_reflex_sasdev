@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  reflex_web:
+    build: .
+    container_name: sergioalmansa_dev_web
+    restart: unless-stopped
+    ports:
+      - "3005:3000" 
+      - "8005:8000"
+    environment:
+      - API_URL=https://api.sergioalmansa.dev
+    networks:
+      - mi_red_interna
+
+# Definimos la red externa para que Docker sepa que ya existe
+networks:
+  mi_red_interna:
+    external: true
