@@ -1,15 +1,17 @@
-FROM python:3.11
+FROM python:3.11-slim
+
+# Instalamos utilidades básicas que Reflex necesita para descargar Node.js/Next.js
+RUN apt-get update && apt-get install -y curl unzip && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# Copy local context to `/app` inside container (see .dockerignore)
-COPY . .
-
-ENV VIRTUAL_ENV=/app/.venv_docker
-ENV PATH ="$VIRTUAL_ENV/bin:$PATH"
-RUN python3.11 -m venv $VIRTUAL_ENV
-
+# Optimizamos la instalación de dependencias
 RUN pip install --upgrade pip
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD reflex run --env prod --backend-only
+# Copiamos el resto del código
+COPY . .
+
+# Quitamos --frontend-only para que levante TANTO el puerto 3000 como el 8000
+CMD reflex run --env prod
